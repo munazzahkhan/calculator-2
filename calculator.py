@@ -1,7 +1,7 @@
 """CLI application for a prefix-notation calculator."""
 
 from arithmetic import (add, subtract, multiply, divide, square, cube,
-                        power, mod, add_multiply, cubes_add )
+                        power, mod, add_mult, add_cubes )
 
 
 # Replace this with your code
@@ -54,11 +54,11 @@ while True:
         elif tokens[0] == "mod":
             result = mod(tokens[1],tokens[2])
         elif tokens[0] == "cubes+":
-            result = cubes_add(tokens[1],tokens[2])
+            result = add_cubes(tokens[1],tokens[2])
     elif len(tokens) == 4:
         tokens[1] = int(tokens[1])
         tokens[2] = int(tokens[2])
         tokens[3] = int(tokens[3])
         if tokens[0] == "x+":
-            result = add_multiply(tokens[1],tokens[2],tokens[3])
+            result = add_mult(tokens[1],tokens[2],tokens[3])
     print(result)
